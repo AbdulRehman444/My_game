@@ -76,7 +76,7 @@ function spawnLions() {
   if (frameCount % 60 === 0) {
     var lion = createSprite(600,120,40,10);
     lion.y = Math.round(random(80,120));
-    lion.addImage(cloudImage);
+    lion.addImage(lionImg);
     lion.scale = 0.5;
     lion.velocityX = -3;
     
