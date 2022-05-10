@@ -1,5 +1,6 @@
 var bg,bgImg;
 var player, shooterImg, shooter_shooting;
+var lionImg,lionsGroup, bearImg, bearsGroup
 
 
 function preload(){
@@ -8,6 +9,8 @@ function preload(){
   shooter_shooting = loadImage("assets/shooter_3.png")
 
   bgImg = loadImage("assets/bg.jpeg")
+  lionImg = loadImage("assets/lion.png")
+  bearImg =loadImage("assets/bear.png")
 
 }
 
@@ -28,7 +31,12 @@ player = createSprite(displayWidth-1150, displayHeight-300, 50, 50);
    player.scale = 0.3
    player.debug = true
    player.setCollider("rectangle",0,0,300,300)
+  
 
+  lionsGroup = new Group();
+  bearsGroup = new Group();
+// lion.addImage(lionImg)
+// bear.addImage(bearImg)
 
 }
 
@@ -61,4 +69,23 @@ else if(keyWentUp("space")){
 
 drawSprites();
 
+}
+
+function spawnLions() {
+  //write code here to spawn the clouds
+  if (frameCount % 60 === 0) {
+    var lion = createSprite(600,120,40,10);
+    lion.y = Math.round(random(80,120));
+    lion.addImage(cloudImage);
+    lion.scale = 0.5;
+    lion.velocityX = -3;
+    
+     //assign lifetime to the variable
+    lion.lifetime = 200;
+    
+    //adjust the depth
+
+    //add each cloud to the group
+    lionsGroup.add(lion);
+  }
 }
