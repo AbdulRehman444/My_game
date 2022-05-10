@@ -77,7 +77,7 @@ function spawnLions() {
     var lion = createSprite(displayWidth-0,120,40,10);
     lion.y = Math.round(random(80,120));
     lion.addImage(lionImg);
-    lion.scale = 1;
+    lion.scale = 0.4;
     lion.velocityX = -10;
     
      //assign lifetime to the variable
