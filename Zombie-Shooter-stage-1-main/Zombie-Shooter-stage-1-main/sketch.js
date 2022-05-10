@@ -43,7 +43,7 @@ player = createSprite(displayWidth-1150, displayHeight-300, 50, 50);
 function draw() {
   background(0); 
 
-
+spawnLions();
 
 
   //moving the player up and down and making the game mobile compatible using touches
@@ -74,11 +74,11 @@ drawSprites();
 function spawnLions() {
   //write code here to spawn the clouds
   if (frameCount % 60 === 0) {
-    var lion = createSprite(600,120,40,10);
+    var lion = createSprite(displayWidth-0,120,40,10);
     lion.y = Math.round(random(80,120));
     lion.addImage(lionImg);
-    lion.scale = 0.5;
-    lion.velocityX = -3;
+    lion.scale = 1;
+    lion.velocityX = -10;
     
      //assign lifetime to the variable
     lion.lifetime = 200;
